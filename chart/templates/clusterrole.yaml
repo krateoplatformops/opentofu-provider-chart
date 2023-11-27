@@ -1,0 +1,28 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ .Chart.Name }}
+rules:
+  - apiGroups: ["tfconnectors.opentofu.krateo.io"]
+    resources: ["repoes"]
+    verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
+  
+  - apiGroups: ["tfconnectors.opentofu.krateo.io"]
+    resources: ["repoes/status"]
+    verbs: ["get", "patch", "update"]
+
+  - apiGroups: ["workspaces.opentofu.krateo.io"]
+    resources: ["repoes"]
+    verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
+  
+  - apiGroups: ["workspaces.opentofu.krateo.io"]
+    resources: ["repoes/status"]
+    verbs: ["get", "patch", "update"]
+  
+  - apiGroups: [""]
+    resources: ["secrets", "configmaps"]
+    verbs: ["get", "list", "watch"]
+  
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["create", "patch", "update"]

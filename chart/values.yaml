@@ -1,0 +1,8 @@
+
+podEnv:
+  - name: OPENTOFU_PROVIDER_DEBUG
+    value: "true"
+  - name: OPENTOFU_PROVIDER_POLL_INTERVAL
+    value: "3m"
+  - name: OPENTOFU_PROVIDER_SERVICE_PORT_HACK
+    value: "false"
