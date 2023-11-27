@@ -3,20 +3,20 @@ kind: ClusterRole
 metadata:
   name: {{ .Chart.Name }}
 rules:
-  - apiGroups: ["tfconnectors.opentofu.krateo.io"]
-    resources: ["repoes"]
+  - apiGroups: ["opentofu.krateo.io"]
+    resources: ["tfconnectors"]
     verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
   
-  - apiGroups: ["tfconnectors.opentofu.krateo.io"]
-    resources: ["repoes/status"]
+  - apiGroups: ["opentofu.krateo.io"]
+    resources: ["tfconnectors/status"]
     verbs: ["get", "patch", "update"]
 
-  - apiGroups: ["workspaces.opentofu.krateo.io"]
-    resources: ["repoes"]
+  - apiGroups: ["opentofu.krateo.io"]
+    resources: ["workspaces"]
     verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
   
-  - apiGroups: ["workspaces.opentofu.krateo.io"]
-    resources: ["repoes/status"]
+  - apiGroups: ["opentofu.krateo.io"]
+    resources: ["workspaces/status"]
     verbs: ["get", "patch", "update"]
   
   - apiGroups: [""]
