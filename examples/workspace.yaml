@@ -1,7 +1,7 @@
 apiVersion: opentofu.krateo.io/v1alpha1
 kind: Workspace
 metadata:
-  name: wrokspace-example
+  name: workspace-example
 spec:
   workspace:
     module: git::http://example-module-url.git
