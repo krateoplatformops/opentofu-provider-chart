@@ -1,0 +1,17 @@
+apiVersion: opentofu.krateo.io/v1alpha1
+kind: Workspace
+metadata:
+  name: workspace-sample
+  annotations:
+    krateo.io/connector-verbose: "true"
+spec:
+  deletionPolicy: Delete
+  tfConnectorRef:
+    name: tfconfig-sample
+    namespace: default
+  workspace:
+    source: Remote
+    # This is the remote repository that will be used to create the workspace. 
+    # The link points to a public repository. Use ref=remote with cloud:true and ref=local with cloud:false
+    module: "git::https://github.com/matteogastaldello/opentofu-example.git?ref=remote"
+    cloud: true
