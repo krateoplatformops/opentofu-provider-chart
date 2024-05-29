@@ -21,8 +21,12 @@ rules:
   
   - apiGroups: [""]
     resources: ["secrets", "configmaps"]
-    verbs: ["get", "list", "watch"]
+    verbs: ["get", "list", "watch", "update", "create"]
   
   - apiGroups: [""]
     resources: ["events"]
     verbs: ["create", "patch", "update"]
+
+  - apiGroups: ["coordination.k8s.io"]
+    resources: ["leases"]
+    verbs: ["create", "get", "update"]
