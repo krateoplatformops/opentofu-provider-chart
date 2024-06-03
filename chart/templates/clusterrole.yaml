@@ -18,15 +18,28 @@ rules:
   - apiGroups: ["opentofu.krateo.io"]
     resources: ["workspaces/status"]
     verbs: ["get", "patch", "update"]
-  
+
   - apiGroups: [""]
     resources: ["secrets", "configmaps"]
-    verbs: ["get", "list", "watch", "update", "create"]
+    verbs: ["get", "list", "watch"]
   
   - apiGroups: [""]
     resources: ["events"]
     verbs: ["create", "patch", "update"]
+  
+  - apiGroups: ["batch"]
+    resources: ["jobs"]
+    verbs: ["create", "delete", "get", "list", "patch", "update", "watch"]
+  
+  - apiGroups: [""]
+    resources: ["serviceaccounts"]
+    verbs: ["*"]
+  
+  - apiGroups: ["rbac.authorization.k8s.io"]
+    resources: ["roles"]
+    verbs: ["*"]
 
-  - apiGroups: ["coordination.k8s.io"]
-    resources: ["leases"]
-    verbs: ["create", "get", "update"]
+  - apiGroups: ["rbac.authorization.k8s.io"]
+    resources: ["rolebindings"]
+    verbs: ["*"]
+
